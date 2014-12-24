@@ -92,6 +92,17 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'mysql.connector.django',
+#         'NAME':     'basecms',
+#         'USER':     'root',
+#         'PASSWORD': '111',
+#         'HOST':     'localhost',
+#         'PORT':     '3306',
+#     }
+# }
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
@@ -124,6 +135,6 @@ TEMPLATE_DIRS = (
 )
 
 CMS_TEMPLATES = (
-    ('template_1.html', 'Template One'),
-    ('template_2.html', 'Template Two'),
+    ('base.html', 'Template Base'),
+    # ('template_2.html', 'Template Two'),
 )
