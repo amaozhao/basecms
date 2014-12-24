@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'sekizai',
     'polymorphic',
     'basecms',
+    'rook',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -106,10 +107,9 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'zh_CN'
+LANGUAGE_CODE = 'zh-cn'
 LANGUAGES = (
-    # ('en', 'English'),
-    ('zh_CN', 'Simplified Chinese'),
+    ('zh-cn', 'Simplified Chinese'),
 )
 
 TIME_ZONE = 'Asia/Shanghai'
@@ -135,6 +135,6 @@ TEMPLATE_DIRS = (
 )
 
 CMS_TEMPLATES = (
-    ('base.html', 'Template Base'),
+    ('home.html', 'Template Home'),
     # ('template_2.html', 'Template Two'),
 )
