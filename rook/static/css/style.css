@@ -41,8 +41,8 @@ background-repeat: repeat;background-attachment: fixed;}
 
 
 /***************Back to top btn********************/
-.back-to-top {position: fixed;bottom: 15px;right: 10px;text-decoration: none;color: #fff;background-color:#0064E8;font-size: 18px;padding:0.25em 0.5em;display: none;}
-.back-to-top:hover {background:#585858;color:#fff;}
+.back-to-top {position: fixed;bottom: 15px;right: 10px;text-decoration: none;color:#fff;background-color:#0064E8;font-size: 18px;padding: 10px 17px; border-radius: 50%;display: none;}
+.back-to-top:hover {background:#0064E8;color:#fff;}
 
 /***************heading separator********************/
 .separator_wrapper {display: block; margin: 12px 0 0px 0;}

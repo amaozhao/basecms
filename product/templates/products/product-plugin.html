@@ -1,0 +1,45 @@
+{% load i18n %}
+<section>
+  <div class="container">
+    <div class="row">
+      <h2 class="heading wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s">{{instance.title}}</h2>
+      <div class="separator_wrapper wow bounceIn">
+        <div class="separator_first_circle">
+          <div class="separator_second_circle">
+          </div>
+        </div>
+      </div>
+      <h3 class="helping-text wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s">{{instance.description}}</h3>
+      <div id="carousel-gallery" class="carousel slide" data-ride="carousel" data-interval="false">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-gallery" data-slide-to="0" class="active"></li>
+        </ol>
+        <div class="gallery-grid">
+          <div class="carousel-inner">
+            <div class="item active">
+              {% for product in instance.get_products %}
+                <div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 wow bounceIn" data-wow-duration="1s" data-wow-delay="1s">
+                  <a href="#" data-target="#screenshot-{{product.id}}" class="thumbnail hcaption">
+                    {% for img in product.images.all|slice:"1"%}
+                      <img src="{{img.url}}" alt="{{product.title}}" style="width: 253px;">
+                    {% endfor %}
+                  </a>
+                  <div id="screenshot-{{product.id}}" class="hide-none hover-text">
+                    <p>{{product.title}}</p>
+                    {% for img in product.images.all%}
+                      <a class="nivo-light" data-lightbox-gallery="product" href="{{img.url}}" title="{{ product.description }}">
+                    {% endfor %}
+                      <div class="icon-container">
+                        <div class="icon"><i class="ion-plus"></i></div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

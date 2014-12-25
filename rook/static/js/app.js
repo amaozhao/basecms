@@ -13,22 +13,6 @@ $(window).bind('scroll', function () {
   }
 });
 
-// $(document).on("scroll", onScroll);
-
-// function onScroll(event){
-//   var scrollPos = $(document).scrollTop();
-//   $('#menu li a').each(function () {
-//     var currLink = $(this);
-//     var refElement = $(currLink.attr("href"));
-//     if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-//       $('#menu li a').removeClass("active");
-//       currLink.addClass("active");
-//     }
-//     else{
-//       currLink.removeClass("active");
-//     }
-//   });
-// }
 
 ////////////////////////////////////////////////////////
 ///////////////Section equal height///////////////////////////
@@ -58,29 +42,11 @@ new WOW().init();
 ////////////////////////////////////////////////////////
 
 
-smoothScroll.init({
-  speed: 1000,
-  easing: 'easeInOutCubic',
-  offset: 0,
-  updateURL: false,
-  callbackBefore: function ( toggle, anchor ) {},
-  callbackAfter: function ( toggle, anchor ) {}
-});
-
-
-
-////////////////////////////////////////////////////////
-///////////////Parallax effects///////////////////////////
-////////////////////////////////////////////////////////
-
-
-$('div.bgParallax').each(function(){
-  var $obj = $(this);
-  $(window).scroll(function() {
-    var yPos = -($(window).scrollTop() / $obj.data('speed')); 
-    var bgpos = '50% '+ yPos + 'px';
-    $obj.css('background-position', bgpos );
-  }); 
+$.scrollUp({
+  animation: 'fade',
+  topDistance: '10',
+  scrollText: '<span class="ion-arrow-up-b" style="color: #FFF"></span>',
+  activeOverlay: false,
 });
 
 
@@ -101,7 +67,7 @@ $(window).load(function(){
 
 $(document).ready(function(){
   $('a.nivo-light').nivoLightbox({
-    effect: 'fade',               // The effect to use when showing the lightbox
+    effect: 'fade',
     theme: 'default',
     keyboardNav: true  
   });
@@ -116,18 +82,8 @@ $(document).ready(function(){
 jQuery(document).ready(function() {
   jQuery('#carousel-slider').carousel({
     interval: 5000
-  })
-});
-jQuery(document).ready(function() {
+  });
   jQuery('#carousel-gallery').carousel();
-});
-
-////////////////////////////////////////////////////////
-///////////////back to top ///////////////////////////
-////////////////////////////////////////////////////////
-
-
-jQuery(document).ready(function() {
   var offset = 220;
   var duration = 500;
   jQuery(window).scroll(function() {
@@ -142,8 +98,9 @@ jQuery(document).ready(function() {
     event.preventDefault();
     jQuery('html, body').animate({scrollTop: 0}, duration);
     return false;
-  })
+  });
 });
+
 
 ////////////////////////////////////////////////////////
 ///////////////contact form ///////////////////////////

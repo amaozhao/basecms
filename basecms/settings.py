@@ -31,6 +31,7 @@ SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = (
+    'djangocms_admin_style',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +41,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
 
     'djangocms_text_ckeditor',
+    'cmsplugin_carousel',
+    'easy_thumbnails',
     'treebeard',
     'cms',
     'menus',
@@ -49,6 +52,7 @@ INSTALLED_APPS = (
     'polymorphic',
     'basecms',
     'rook',
+    'product',
 )
 
 MIDDLEWARE_CLASSES = (
